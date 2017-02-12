@@ -1,0 +1,31 @@
+1,iOS在升级到4.0以后就支持了多任务了。下文将详细介绍一下这个特性。
+
+1、检查设备是否支持多任务
+Apple出于性能的考虑，并不是所有的iOS设备升级到iOS4以后都支持多任务，比如iPhone 3G。如果你的应用在没有多任务特性时会出问题，为了保持应用的健壮性，你应该对此进行判断并处理。你可以通过调用UIDevice对象的multitaskingSupported属性来获取当前设备是否支持多任务。
+if(![UIDevice currentDevice].multitaskingSupported){
+    //不支持多任务时应做的处理
+}
+2、基本多任务特性
+通常，当用户按一下Home键，当前应用就会被进入后台，应用处在后台运行状态一小段时间后，就会进入挂起（suspend）状态，此时应用不会再执行任何代码。如果系统在运行其他应用时内存资源不足，这个挂起的应用甚至有可能被系统退出，释放内存以供活动的应用使用。只有当用户再次运行此应用，应用才会从挂起状态唤醒，代码得以继续执行。这就是iOS4带来的基本的多任务特性，这个特性是一般应用默认支持的，就是说你的应用不需要任何修改就能支持基本多任务特性。
+既然是多任务你应该会在应用进入后台时做一些处理，比如暂停一些界面的定时刷新或网络请求。同时，或者你会在程序进入前台时执行一些恢复操作。在你的应用的application delegate里有2个消息用于处理这些消息：
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    //进入后台时要进行的处理
+}
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    //进入前台时要进行的处理
+}
+当然你也许不会都在application delegate处理所有的事情。如果你要在其他对象中处理，那么你就需要注册系统通知了，这两个通知分别是 UIApplicationDidEnterBackgroundNotification和 UIApplicationWillEnterForegroundNotification。
+也许你需要更多的多任务特性，比如后台播放音乐或者是后台进行GPS跟踪。这会是下面介绍的内容。
+3、后台播放音乐
+通常，一般应用在进入后台时，任何声音就将会停止。这也许不是我们所想要的。要想让自己的应用支持后台播放，首先要修改应用的Info.plist 文件，你需要在Info.plist文件中添加UIBackgroundModes字段，该字段的值是应用支持的所有后台模式，是一个数值类型。目前此数组可以包含“audio”、“location”和“voip”这三个字符串常量，如果要支持后台音乐播放，你就需要包含“audio”，其余两个会将在后面讲到。
+同时，你也应该设置一下应用程序的Audio Sesstion。这个是必需的，如果不设置Audio Sesstion，应用就可能进入后台时Audio Sesstion失活而停止播放。一般需要这么设置就可以了：
+[[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback error:nil];
+4、后台GPS跟踪
+和后台播放音乐类似，若要支持后台GPS跟踪，你就需要在Info.plist文件中UIBackgroundModes字段对应的数组中增加“location”字符串。
+5、后台voip支持
+由于voip应用需要一个长连接到服务器，为了让这类应用能正常工作，iOS中假如后台voip支持特性。为支持这一特性，需要在Info.plist文件中UIBackgroundModes字段对应的数组中增加“voip”字符串。
+此外你仍然需要配置一下你的网络连接，以便支持后台连接。iOS提供的网络连接库有几种，下面一一说明：
+如果你使用的是NSStream，如NSInputStream或NSOutputStream，需要调用setProperty:forKey:将Key为NSStreamNetworkServiceType的value设置为
+NSStreamNetworkServiceTypeVoIP
+如果你使用NSURLRequest，需要调用setNetworkServiceType:将网络类型设置为NSURLNetworkServiceTypeVoIP
+如果你使用CFStream，如CFReadStreamRef或CFWriteStreamRef，需要调用 CFReadStreamSetProperty或CFWriteStreamSetProperty将 kCFStreamNetworkServiceType属性设置为kCFStreamNetworkServiceTypeVoIP。

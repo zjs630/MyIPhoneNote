@@ -1,0 +1,48 @@
+
+
+过程如下：
+
+
+1.首先我以Team menber的身份加入了公司的开发者团队，
+
+2.之后通过mac系统的钥匙串访问程序（Keychain Access），创建了一个证书请求
+CSR。
+
+保存到磁盘上的文件名称为：CertificateSigningRequest.certSigningRequest
+
+3.接下来登录IDP Portal 进行提交证书的请求。此时需要等待，Team Agent 的批准
+（决定是否允许团队成员拥有开发者证书）。
+
+
+Team Agent批准后，我的idp帐号就有了自己的开发者证书。
+
+4.注册设备。我测试用的设备，公司早已经注册。
+
+5.生成App ids，是有Bundle Seed ID （有apple 网站自动生成）和Bundle
+identifier（格式一般为：com.componyname.*）构成的.
+
+我用Team Agent账户新建了一个App ids。
+
+
+6.生成Provisioning Profiles。
+
+通过添加Profile name，选择我账户的开发者证书，选择我生成的App ID，选择我要用
+到的Devices。之后变可以提交。
+
+生成一个后缀为.mobileprovison的文件，下载到本地。
+
+7.真机调试
+
+连接设备，打开xcode的Organizer，可以看到连接的设备，将Profile添加到设备中，
+运行程序选择真机调试。
+
+
+注：其中4，5，6 只Team Agent 和Team admin有此操作权限。
+
+
+
+
+遇到的问题，本机安装的sdk版本为4.0，而测试机iPhone的sdk版本为4.1，不能通过真
+机测试，需要升级本机的sdk版本才可以。
+
+ipad真机测试成功。

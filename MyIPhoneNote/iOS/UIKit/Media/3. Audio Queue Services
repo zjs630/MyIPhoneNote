@@ -1,0 +1,9 @@
+Audio Queue Services
+
+如果以上两种音频播放的解决方案都无法满足你的需求，那么我想你肯定需要使用 
+Audio Queue Services。使用 Audio Queue Services 对音频进行播放，
+你可以完全实现对声音的控制。例如，你可以在声音数据从文件读到内存缓冲区后对声音进行一定处理再进行播放，
+从而实现对音频的快速/慢速播放的功能。
+
+因为 Audio Queue Services 相对复杂很多，Apple 官方已经把它整理为一本书了，
+具体可以参考 Audio Queue Services Programming Guide 和 SpeakHere 的程序示例。

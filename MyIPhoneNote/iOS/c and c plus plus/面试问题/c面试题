@@ -1,0 +1,32 @@
+1，BOOL值,float,指针变量与“零值”比较的if语句。//判断是否为零
+a,写出BOOl flag 为true or false.if(flag)或者if(!flag)
+b,请写出 float x 与“零值”比较的 if 语句。（4分） 
+标准答案示例： 
+const float EPSINON = 0.00001;
+if ((x >= - EPSINON) && (x <= EPSINON)
+c,请写出 char *p 与“零值”比较的 if 语句。（3分） 
+标准答案： 
+if (p == NULL)
+if (p != NULL) 
+
+2,编写strcpy函数（10分）
+已知strcpy函数的原型是 char *strcpy(char *strDest, const char *strSrc);
+其中strDest是目的字符串，strSrc是源字符串。
+（1）不调用C++/C的字符串库函数，请编写函数
+
+strcpy char *strcpy(char *strDest, const char *strSrc);
+{
+assert((strDest!=NULL) && (strSrc !=NULL)); // 2分
+char *address = strDest; // 2分
+while( (*strDest++ = * strSrc++) != '' ) // 2分 NULL ;
+return address ; // 2分
+}
+3，判断一个年份是否闰年
+int year;
+scanf("%d",&year);
+if((year %4 == 0 %% year%100 !=0) || year % 400 == 0){
+NSLog(@"这个是闰年");
+}
+else{
+NSLog(@"这个不是闰年");
+}

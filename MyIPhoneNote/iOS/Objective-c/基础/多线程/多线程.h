@@ -1,0 +1,270 @@
+http://www.cnblogs.com/qingche/p/3496190.html
+
+iOS- NSThread/NSOperation/GCD 三种多线程技术的对比及实现
+
+1.iOS的三种多线程技术
+
+1.NSThread 每个NSThread对象对应一个线程，量级较轻（真正的多线程）
+2.以下两点是苹果专门开发的“并发”技术，使得程序员可以不再去关心线程的具体使用问题
+a,NSOperation/NSOperationQueue 面向对象的线程技术
+b,GCD —— Grand Central Dispatch（派发） 是基于C语言的框架，可以充分利用多核，是苹果推荐使用的多线程技术
+
+
+以上这三种编程方式从上到下，抽象度层次是从低到高的，抽象度越高的使用越简单，也是Apple最推荐使用的，在项目中很多框架技术分别使用了不同多线程技术。
+
+
+
+2.三种多线程技术的对比
+•NSThread:
+–优点：NSThread 比其他两个轻量级，使用简单
+–缺点：需要自己管理线程的生命周期、线程同步、加锁、睡眠以及唤醒等。线程同步对数据的加锁会有一定的系统开销
+
+•NSOperation：
+–不需要关心线程管理，数据同步的事情，可以把精力放在自己需要执行的操作上
+–NSOperation是面向对象的
+
+•GCD：
+–Grand Central Dispatch是由苹果开发的一个多核编程的解决方案。iOS4.0+才能使用，是替代NSThread， NSOperation的高效和强大的技术
+–GCD是基于C语言的
+
+3.三种多线程技术的实现
+3.1. NSThread的多线程技术，
+1> 类方法直接开启后台线程，并执行选择器方法
+
+detachNewThreadSelector
+1  // 新建一个线程，调用@selector方法
+2
+3 [NSThread detachNewThreadSelector:@selector(bigDemo) toTarget:self withObject:nil];
+
+
+2> 成员方法，在实例化线程对象之后，需要使用start执行选择器方法
+
+initWithTarget
+
+// 成员方法
+NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(bigDemo) object:nil];
+
+// 启动start线程
+[thread start];
+
+
+
+对于NSThread的简单使用，可以用NSObject的performSelectorInBackground替代
+
+
+
+1   // performSelectorInBackground是将bigDemo的任务放在后台线程中执行
+2
+3     [self performSelectorInBackground:@selector(bigDemo) withObject:nil];
+
+
+同时，在NSThread调用的方法中，同样要使用autoreleasepool进行内存管理，否则容易出现内存泄露。
+
+复制代码
+1 　　// 自动释放池
+2
+3     // 负责其他线程上的内存管理，在使用NSThread或者NSObject的线程方法时，一定要使用自动释放池
+4
+5     // 否则容易出现内存泄露。
+6
+7     @autoreleasepool {
+8
+9
+10
+11 　　}
+复制代码
+
+
+
+
+3.2 NSOperation，面向对象的多线程技术
+
+
+1> 使用步骤：
+
+1） 实例化操作
+
+
+
+1     // 实例化操作队列
+2     _queue = [[NSOperationQueue alloc] init];
+
+
+
+
+a) NSInvocationOperation
+
+复制代码
+1     NSInvocationOperation *op1 = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(opAction) object:nil];
+2
+3     // 如果使用start，会在当前线程启动操作
+4 //    [op1 start];
+5
+6     // 1. 一旦将操作添加到操作队列，操作就会启动
+7     [_queue addOperation:op1];
+复制代码
+
+
+
+
+b) NSBlockOperation
+
+复制代码
+1 #pragma mark 模仿下载网络图像
+2 - (IBAction)operationDemo3:(id)sender
+3 {
+    4     // 1. 下载
+    5     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        6         NSLog(@"下载 %@" , [NSThread currentThread]);
+        7     }];
+    8     // 2. 滤镜
+    9     NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        10         NSLog(@"滤镜 %@" , [NSThread currentThread]);
+        11     }];
+    12     // 3. 显示
+    13     NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        14         NSLog(@"更新UI %@" , [NSThread currentThread]);
+        15     }];
+    16
+    17     // 添加操作之间的依赖关系，所谓“依赖”关系，就是等待前一个任务完成后，后一个任务才能启动
+    18     // 依赖关系可以跨线程队列实现
+    19     // 提示：在指定依赖关系时，注意不要循环依赖，否则不工作。
+    20     [op2 addDependency:op1];
+    21     [op3 addDependency:op2];
+    22 //    [op1 addDependency:op3];
+    23
+    24     [_queue addOperation:op1];
+    25     [_queue addOperation:op2];
+    26     [[NSOperationQueue mainQueue] addOperation:op3];
+    27 }
+复制代码
+
+
+
+
+2） 将操作添加到队列NSOperationQueue即可启动多线程执行
+
+
+
+1    [_queue addOperation:op1];
+2    [_queue addOperation:op2];
+
+
+2> 更新UI使用主线程队列
+
+
+
+复制代码
+//两方式
+
+[NSOpeationQueue mainQueue] addOperation ^{
+    
+    　　};
+
+
+[[NSOperationQueue mainQueue] addOperation:op3];
+复制代码
+
+
+
+
+3> 操作队列的setMaxConcurrentOperationCount
+
+可以设置同时并发的线程数量！
+
+1     // 控制同时最大并发的线程数量
+2     [_queue setMaxConcurrentOperationCount:2];
+
+
+提示：此功能仅有NSOperation有！
+
+
+
+4> 使用addDependency可以设置任务的执行先后顺序，同时可以跨操作队列指定依赖关系
+
+
+
+复制代码
+1      // 添加操作之间的依赖关系，所谓“依赖”关系，就是等待前一个任务完成后，后一个任务才能启动
+2
+3    // 依赖关系可以跨线程队列实现
+4
+5     // 提示：在指定依赖关系时，注意不要循环依赖，否则不工作。
+6   [op2 addDependency:op1];
+7   [op3 addDependency:op2];
+8   [op1 addDependency:op3];
+复制代码
+
+
+提示：在指定依赖关系时，注意不要循环依赖，否则不工作。
+
+
+
+
+
+3.3. GCD，C语言
+
+GCD就是为了在“多核”上使用多线程技术
+
+
+
+1> 要使用GCD，所有的方法都是dispatch开头的
+
+2> 名词解释
+
+global  全局
+
+queue   队列
+
+async   异步
+
+sync    同步
+
+
+
+3> 要执行异步的任务，就在全局队列中执行即可
+
+dispatch_async 异步执行控制不住先后顺序
+
+
+
+4> 关于GCD的队列
+
+全局队列    dispatch_get_global_queue
+
+参数：优先级 DISPATCH_QUEUE_PRIORITY_DEFAULT
+
+始终是 0
+
+1  dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+可同步 可异步
+
+
+
+串行队列
+
+dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
+
+
+是创建得到的，不能直接获取
+
+只能同步
+
+
+
+
+
+主队列      dispatch_get_main_queue
+
+1 dispatch_async(dispatch_get_main_queue(), ^{
+    2         NSLog(@"main - > %@", [NSThread currentThread]);
+    3     });
+只能同歩
+
+
+
+
+
+5> 异步和同步与方法名无关，与运行所在的队列有关！
+
+同步主要用来控制方法的被调用的顺序

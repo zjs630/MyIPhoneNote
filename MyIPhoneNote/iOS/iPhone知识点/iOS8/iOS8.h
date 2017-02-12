@@ -1,0 +1,1 @@
+1，iOS8 支持iPhone4s及之后的设备，iPod touch 5，iPad2及之后的设备。

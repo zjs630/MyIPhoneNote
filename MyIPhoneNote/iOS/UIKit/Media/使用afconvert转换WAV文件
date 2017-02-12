@@ -1,0 +1,29 @@
+1,程序中经常使用 .WAV 的音效文件，虽然可以直接使用它，但是最好转换为 apple 推荐的 .CAF 格式。
+这个时候我们就可以使用 afconvert 命令。其基本的语法如下：
+
+用 -d 指定频率格式比如: -d LEI16@22050 就代表 16位 22050Hz。
+
+另外可以用 -c 指定声道。用 -f 指定格式。比如：
+$afconvert -f WAVE -d LEI16@22050 -c 1 <destinate file >
+
+2,在mac上使用afconvert命令可以将音频文件转换成caf文件。
+
+afconvert -f caff -d LEI16@44100 -c 1 in.wav out.caf
+
+-f 指定文件格式
+-d 数据格式，@44100指采样率
+-c 通道数
+3,下面是常用的两个命令：
+//改变当前目录及子目录中所有.wav文件的数据格式为LEI16@44100
+$find . -name '*.wav' -exec afconvert -f WAVE -d LEI16@44100 -c 1 {} \;
+//将.wav转换为.caf格式
+$find . -name '*.wav' -exec afconvert -f caff -d LEI16@44100 {} \;
+
+How do I convert an audio file to the preferred format for iPhone OS?
+The preferred full-quality audio format for iPhone OS is 16-bit, little-endian, 
+linear PCM packaged as a CAF file. To convert an audio file to this format, 
+use the afconvert tool at the command line in Mac OS X, as shown in Listing 5.
+
+Listing 5: Converting an audio file to the preferred format for iPhone OS
+/usr/bin/afconvert -f caff -d LEI16 {INPUT} {OUTPUT}
+To see all the options available for the afconvert tool, enter afconvert -h at the command line.
