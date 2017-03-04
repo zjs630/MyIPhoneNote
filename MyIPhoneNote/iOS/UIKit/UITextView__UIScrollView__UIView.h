@@ -40,8 +40,10 @@ textView.textAlignment = UITextAlignmentLeft;//UITextAlignmentLeft UITextAlignme
     CGRect caret = [textView caretRectForPosition:textView.selectedTextRange.end];
     [textView scrollRectToVisible:caret animated:YES];
 }
+4.设置键盘滚动时消失。
 
-4,依据键盘，动态改变textView的高度。
+
+5,依据键盘，动态改变textView的高度。
 （1）
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
