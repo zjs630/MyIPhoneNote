@@ -6,7 +6,6 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "1.h"
 
 这个是我创建的xml文件，用于测试用的：
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,17 +59,6 @@ namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 attributes:(NSDictionary *)attributeDict {
 	NSLog(elementName);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -82,13 +82,6 @@ CATransition *myTransition = [CATransition animation];
 
 
 
-
-
-
-
-
-
-
 在玩一些 iPhone/iPod Touch 游戏时, 按游戏开始或由一个画面转到另一个画面, 会有一个很cool 的转移画面, 一直在想是怎么做的呢? 后来才知道, 是用了 LKAnimation.
 
 刚找到参考, 马上试试用.
@@ -148,22 +141,7 @@ LKTimingFunction 的参数也是一个字符串, 可以是以下三个之一:
 
 
 
-
-
-
-
-
-
 //我们怎样用 iphone 提供的功能做动画效果呢? 答案就是: UIClippedImageView!
-
-
-
-
-
-
-
-
-
 
 
 
@@ -233,17 +211,6 @@ UIBarButtonItem *flipButtonBarItem=[[UIBarButtonItem alloc] initWithCustomView:n
 	flipIndicatorButton.userInteractionEnabled = YES;
 	
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

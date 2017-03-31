@@ -16,10 +16,7 @@ or
 {
     [super awakeFromNib];
     NSLog(@"awakeFromNib");
-    
 }
-
-
 
 1-3，
 - (void)loadView

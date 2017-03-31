@@ -113,8 +113,6 @@
 		6225183E19080C9D00E56F53 /* 响应者链.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "响应者链.h"; sourceTree = "<group>"; };
 		6240609B190260F5005012D4 /* ABPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABPerson.h; sourceTree = "<group>"; };
 		6240609C190260F5005012D4 /* 联系人.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "联系人.h"; sourceTree = "<group>"; };
-		6240609E190261A3005012D4 /* 使用GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "使用GCD.h"; path = "多线程/使用GCD.h"; sourceTree = "<group>"; };
-		6240609F190261BA005012D4 /* 多线程.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "多线程.h"; path = "多线程/多线程.h"; sourceTree = "<group>"; };
 		62AAE64C1973E441002F945C /* question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = question.h; path = "开发中遇到的问题/question.h"; sourceTree = "<group>"; };
 		62B4A28F18FFC44B0087BA73 /* MyIPhoneNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyIPhoneNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B4A29218FFC44B0087BA73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -237,7 +235,6 @@
 		62B4A35818FFDB250087BA73 /* 移除NSLog输出.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "移除NSLog输出.h"; sourceTree = "<group>"; };
 		62B4A35918FFDB250087BA73 /* 程序的启动画面设置.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "程序的启动画面设置.m"; sourceTree = "<group>"; };
 		62B4A35A18FFDB250087BA73 /* 编译错误处理.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "编译错误处理.h"; sourceTree = "<group>"; };
-		62B4A35B18FFDB250087BA73 /* 自动引用计数.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "自动引用计数.h"; path = "../../iPhone知识点/自动引用计数.h"; sourceTree = "<group>"; };
 		62B4A35D18FFDB250087BA73 /* Maps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maps.h; sourceTree = "<group>"; };
 		62B4A35E18FFDB250087BA73 /* MKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKAnnotation.h; sourceTree = "<group>"; };
 		62B4A36018FFDB250087BA73 /* MPMediaPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMediaPickerController.h; sourceTree = "<group>"; };
@@ -305,8 +302,6 @@
 		62B4A3A518FFDB260087BA73 /* Property Lists 的学习.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Property Lists 的学习.h"; sourceTree = "<group>"; };
 		62B4A3A618FFDB260087BA73 /* SEL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SEL.h; path = ../SEL.h; sourceTree = "<group>"; };
 		62B4A3A718FFDB260087BA73 /* UIMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMenuController.h; sourceTree = "<group>"; };
-		62B4A3A918FFDB260087BA73 /* 内存管理.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "内存管理.h"; sourceTree = "<group>"; };
-		62B4A3AA18FFDB260087BA73 /* 内存管理ARC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "内存管理ARC.h"; sourceTree = "<group>"; };
 		62B4A3AB18FFDB260087BA73 /* 内存警告.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "内存警告.h"; sourceTree = "<group>"; };
 		62B4A3AC18FFDB260087BA73 /* 协议.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "协议.h"; sourceTree = "<group>"; };
 		62B4A3AD18FFDB260087BA73 /* 单例.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "单例.h"; sourceTree = "<group>"; };
@@ -322,7 +317,6 @@
 		62B4A3B818FFDB260087BA73 /* 属性property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "属性property.h"; sourceTree = "<group>"; };
 		62B4A3B918FFDB260087BA73 /* 工厂方法.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "工厂方法.h"; sourceTree = "<group>"; };
 		62B4A3BA18FFDB260087BA73 /* 异常处理.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "异常处理.h"; sourceTree = "<group>"; };
-		62B4A3BB18FFDB260087BA73 /* 引用计数.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "引用计数.h"; sourceTree = "<group>"; };
 		62B4A3BC18FFDB260087BA73 /* 强循环引用.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "强循环引用.h"; sourceTree = "<group>"; };
 		62B4A3BE18FFDB260087BA73 /* 对象归档.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "对象归档.h"; sourceTree = "<group>"; };
 		62B4A3BF18FFDB260087BA73 /* 数据持久化.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "数据持久化.h"; sourceTree = "<group>"; };
@@ -528,8 +522,6 @@
 		6240609D19026167005012D4 /* 多线程 */ = {
 			isa = PBXGroup;
 			children = (
-				6240609F190261BA005012D4 /* 多线程.h */,
-				6240609E190261A3005012D4 /* 使用GCD.h */,
 				62F9CFA3191E235E00D8F1E8 /* Grand Central Dispatch.h */,
 			);
 			name = "多线程";
@@ -538,11 +530,7 @@
 		62949E191A061EEB00135D67 /* 内存管理 */ = {
 			isa = PBXGroup;
 			children = (
-				62B4A3A918FFDB260087BA73 /* 内存管理.h */,
-				62B4A3AA18FFDB260087BA73 /* 内存管理ARC.h */,
 				62B4A3AB18FFDB260087BA73 /* 内存警告.h */,
-				62B4A3BB18FFDB260087BA73 /* 引用计数.h */,
-				62B4A35B18FFDB250087BA73 /* 自动引用计数.h */,
 			);
 			name = "内存管理";
 			sourceTree = "<group>";
