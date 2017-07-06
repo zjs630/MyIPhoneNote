@@ -1,10 +1,3 @@
-
-
-
-20. 官方 API 触发 iPhone 振动的代码
-如果您想在应用里添加提示功能，比如让 iPhone 机身震动，可以使用下面这行代码： AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-
-19.iPhone 播放 midi 文件的方法
 iPhone 默认不带播放MIDI的框架，所以播放MIDI还得寻求第3方的库帮忙。这里使用的库就是大名鼎鼎的 FMOD ,许多火爆游戏使用的都是这个库。开发者可以免费下载使用。
 首先下载安装 FMOD API FOR IPHONE：http://www.fmod.org/index.php/release/version/fmodapi42607iphone-installer.dmg。安装后可以在目录中看到不少示范代码，可惜没有MIDI。
 自己写一个：）

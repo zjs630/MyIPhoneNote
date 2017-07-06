@@ -68,7 +68,6 @@
 		62B4A49A18FFDB260087BA73 /* 关于xml解析.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B4A44618FFDB260087BA73 /* 关于xml解析.m */; };
 		62DC41FB196F82F10061D687 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DC41FA196F82F10061D687 /* 9.png */; };
 		E515B3C11ACA410800CC689D /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = E515B3781ACA410800CC689D /* UIImage+Extras.m */; };
-		E515B3C21ACA410800CC689D /* 3. Audio Queue Services in Resources */ = {isa = PBXBuildFile; fileRef = E515B3891ACA410800CC689D /* 3. Audio Queue Services */; };
 		E515B3C31ACA410800CC689D /* 使用afconvert转换WAV文件 in Resources */ = {isa = PBXBuildFile; fileRef = E515B38D1ACA410800CC689D /* 使用afconvert转换WAV文件 */; };
 		E55101001AAF07CA0092CC1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E55100FF1AAF07CA0092CC1C /* main.m */; };
 		E55101031AAF07CA0092CC1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E55101021AAF07CA0092CC1C /* AppDelegate.m */; };
@@ -288,7 +287,6 @@
 		62B4A39618FFDB260087BA73 /* NSUserDefaults 用户偏好.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults 用户偏好.h"; sourceTree = "<group>"; };
 		62B4A39718FFDB260087BA73 /* NSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSValue.h; sourceTree = "<group>"; };
 		62B4A39818FFDB260087BA73 /* NSXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLParser.h; sourceTree = "<group>"; };
-		62B4A39A18FFDB260087BA73 /* block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = block.h; sourceTree = "<group>"; };
 		62B4A39B18FFDB260087BA73 /* BOOL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOOL.h; path = ../BOOL.h; sourceTree = "<group>"; };
 		62B4A39C18FFDB260087BA73 /* CGRect CGPoint CGSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGRect CGPoint CGSize.h"; sourceTree = "<group>"; };
 		62B4A39D18FFDB260087BA73 /* Core Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core Data.h"; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 		62B4A3BE18FFDB260087BA73 /* 对象归档.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "对象归档.h"; sourceTree = "<group>"; };
 		62B4A3BF18FFDB260087BA73 /* 数据持久化.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "数据持久化.h"; sourceTree = "<group>"; };
 		62B4A3C018FFDB260087BA73 /* 数据类型.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "数据类型.h"; path = "../数据类型.h"; sourceTree = "<group>"; };
-		62B4A3C118FFDB260087BA73 /* 类别 Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "类别 Category.h"; sourceTree = "<group>"; };
 		62B4A3C218FFDB260087BA73 /* 继承.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "继承.h"; sourceTree = "<group>"; };
 		62B4A3C318FFDB260087BA73 /* 设计模式.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "设计模式.h"; sourceTree = "<group>"; };
 		62B4A3C418FFDB260087BA73 /* 选择器selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "选择器selector.h"; sourceTree = "<group>"; };
@@ -375,14 +372,10 @@
 		E515B3831ACA410800CC689D /* UIFontDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFontDescriptor.h; sourceTree = "<group>"; };
 		E515B3841ACA410800CC689D /* UIDynamicanimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDynamicanimator.h; sourceTree = "<group>"; };
 		E515B3861ACA410800CC689D /* 新特性.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "新特性.h"; sourceTree = "<group>"; };
-		E515B3881ACA410800CC689D /* 2.AVAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 2.AVAudioPlayer.h; sourceTree = "<group>"; };
-		E515B3891ACA410800CC689D /* 3. Audio Queue Services */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3. Audio Queue Services"; sourceTree = "<group>"; };
-		E515B38A1ACA410800CC689D /* 4.OpenAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 4.OpenAL.h; sourceTree = "<group>"; };
 		E515B38B1ACA410800CC689D /* ALAssetsLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAssetsLibrary.h; sourceTree = "<group>"; };
-		E515B38C1ACA410800CC689D /* Audio 声音播放.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Audio 声音播放.h"; sourceTree = "<group>"; };
 		E515B38D1ACA410800CC689D /* 使用afconvert转换WAV文件 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "使用afconvert转换WAV文件"; sourceTree = "<group>"; };
 		E515B38E1ACA410800CC689D /* 网络视频加载资料.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "网络视频加载资料.h"; sourceTree = "<group>"; };
-		E515B38F1ACA410800CC689D /* 音频加载.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "音频加载.h"; sourceTree = "<group>"; };
+		E515B38F1ACA410800CC689D /* iPhone 播放 midi 文件的方法.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iPhone 播放 midi 文件的方法.h"; sourceTree = "<group>"; };
 		E515B3901ACA410800CC689D /* UIAccelerometer 加速器.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAccelerometer 加速器.h"; sourceTree = "<group>"; };
 		E515B3911ACA410800CC689D /* UIActionSheet__UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActionSheet__UIView.h; sourceTree = "<group>"; };
 		E515B3921ACA410800CC689D /* UIActivityIndicatorView__UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivityIndicatorView__UIView.h; sourceTree = "<group>"; };
@@ -944,7 +937,6 @@
 				6240609D19026167005012D4 /* 多线程 */,
 				62B4A3B018FFDB260087BA73 /* 数据类型 */,
 				62B4A3BD18FFDB260087BA73 /* 数据持久化 */,
-				62B4A39A18FFDB260087BA73 /* block.h */,
 				62B4A39C18FFDB260087BA73 /* CGRect CGPoint CGSize.h */,
 				62B4A39D18FFDB260087BA73 /* Core Data.h */,
 				62B4A39E18FFDB260087BA73 /* Enumeration 枚举的使用.h */,
@@ -968,7 +960,6 @@
 				62B4A3B918FFDB260087BA73 /* 工厂方法.h */,
 				62B4A3BA18FFDB260087BA73 /* 异常处理.h */,
 				62B4A3BC18FFDB260087BA73 /* 强循环引用.h */,
-				62B4A3C118FFDB260087BA73 /* 类别 Category.h */,
 				62B4A3C218FFDB260087BA73 /* 继承.h */,
 				62B4A3C318FFDB260087BA73 /* 设计模式.h */,
 				62B4A3C418FFDB260087BA73 /* 选择器selector.h */,
@@ -1223,14 +1214,10 @@
 		E515B3871ACA410800CC689D /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				E515B3881ACA410800CC689D /* 2.AVAudioPlayer.h */,
-				E515B3891ACA410800CC689D /* 3. Audio Queue Services */,
-				E515B38A1ACA410800CC689D /* 4.OpenAL.h */,
 				E515B38B1ACA410800CC689D /* ALAssetsLibrary.h */,
-				E515B38C1ACA410800CC689D /* Audio 声音播放.h */,
 				E515B38D1ACA410800CC689D /* 使用afconvert转换WAV文件 */,
 				E515B38E1ACA410800CC689D /* 网络视频加载资料.h */,
-				E515B38F1ACA410800CC689D /* 音频加载.h */,
+				E515B38F1ACA410800CC689D /* iPhone 播放 midi 文件的方法.h */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -1451,7 +1438,6 @@
 				62B4A49318FFDB260087BA73 /* 使用第三方字体.png in Resources */,
 				62B4A48B18FFDB260087BA73 /* iOS 系统结构思维导图.jpg in Resources */,
 				62B4A46B18FFDB260087BA73 /* CCEaseAction.png in Resources */,
-				E515B3C21ACA410800CC689D /* 3. Audio Queue Services in Resources */,
 				62B4A48A18FFDB260087BA73 /* Frame bounds.png in Resources */,
 				E58C9F211E50205200B7B6E0 /* IMG_1524.JPG in Resources */,
 				62B4A46118FFDB260087BA73 /* const的说明 in Resources */,
