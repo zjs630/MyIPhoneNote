@@ -1,16 +1,3 @@
-一、音频文件的加载
-1,在项目中添加AudioToolbox.Frameworks
-2,代码：
-NSString *path = [[NSBundle mainBundle] pathForResource:@"crunch" ofType:@"wav"];//获取音频文件路径 
-SystemSoundID soundID;//声明变量
-
-CFURLRef sound1URL = (CFURLRef)[NSURL fileURLWithPath:path1];//将路径转换为CFURLRef
-AudioServicesCreateSystemSoundID(sound1URL, &sound1);//加载音频文件并与指定soundID联系起来 
-/*或者
- AudioServicesCreateSystemSoundID((CFURLRef) [NSURL fileURLWithPath:path],&soundID);//将路径转换为CFURLRef 
- */
-
-AudioServicesPlaySystemSound(soundID);//在需要播放的地方加入
 
 
 
